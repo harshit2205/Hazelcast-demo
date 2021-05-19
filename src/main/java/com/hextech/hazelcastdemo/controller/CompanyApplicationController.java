@@ -24,10 +24,10 @@ public class CompanyApplicationController {
         return empService.get(id);
     }
 
-    @CachePut(value="employee", key="#emp.id", unless = "#result.class == EmployeeEntity.class")
-    @PostMapping("Employee/addnew")
+    @CachePut(value="employee", key="#emp.id")
+    @PostMapping("employee/addnew")
     public EmployeeEntity post(@RequestBody EmployeeEntity emp){
-        System.out.println("trying to push value to cache server : "+emp.getEmpId());
+        System.out.println("trying to push value to cache server : "+emp.getId());
         return empService.saveEmployee(emp);
     }
 

@@ -11,6 +11,9 @@
             <endpoint-group name="CLUSTER_READ" enabled="true" />
             <endpoint-group name="HEALTH_CHECK" enabled="true" />
         </rest-api>
+        <join>
+            <multicast enabled="true" />
+        </join>
     </network>
 
 </hazelcast>
